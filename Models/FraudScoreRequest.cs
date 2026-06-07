@@ -4,22 +4,22 @@ using System.Text.Json.Serialization;
 public class FraudScoreRequest
 {
     [JsonPropertyName("id")] 
-    public int Id {get; set;}
+    public string Id {get; set;} = "";
     
     [JsonPropertyName("transaction")]
-    public TransactionDTO  transactionDTO {get; set;}
+    public required TransactionDTO  transactionDTO {get; set;} 
 
     [JsonPropertyName("customer")]
-    public CustomerDTO customerDTO {get; set;}
+    public required CustomerDTO customerDTO {get; set;} 
 
     [JsonPropertyName("merchant")]
-    public MerchantDTO merchantDTO {get; set;}
+    public required MerchantDTO merchantDTO {get; set;}
 
     [JsonPropertyName("terminal")]
-    public TerminalDTO terminalDTO {get; set;}
+    public required TerminalDTO terminalDTO {get; set;}
 
     [JsonPropertyName("last_transaction")]
-    public LastTransactionDTO lastTransactionDTO {get; set;}
+    public required LastTransactionDTO lastTransactionDTO {get; set;}
 }
 
 public class TransactionDTO
@@ -44,13 +44,13 @@ public class CustomerDTO
     public int TxCount24h {get; set;}
 
     [JsonPropertyName("known_merchants")]
-    public string[] KnownMerchants {get; set;}
+    public string[] KnownMerchants {get; set;}= [];
 }
 
 public class MerchantDTO
 {
     [JsonPropertyName("id")]
-    public string Id {get; set;}
+    public string Id {get; set;}= "";
 
     [JsonPropertyName("mcc")]
     public int Mcc {get; set;}

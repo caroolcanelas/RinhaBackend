@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-public struct FraudScoreResponse
+public class FraudScoreResponse
 {
 
     [JsonPropertyName("approved")]
